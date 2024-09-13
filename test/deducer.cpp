@@ -1,3 +1,4 @@
+#include <string>
 #include <type_traits>
 
 #include <siga/propagate/detail/deducer.hpp>

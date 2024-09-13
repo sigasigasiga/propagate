@@ -10,9 +10,6 @@ struct tag
     friend constexpr auto loophole(tag<Fn>);
 };
 
-template<string_literal Fn>
-constexpr auto loophole(tag<Fn>);
-
 template<string_literal Fn, typename ReturnType>
 struct deducer_loophole
 {
@@ -25,7 +22,7 @@ template<string_literal Fn>
 struct deducer
 {
     template<typename T, std::size_t = sizeof(deducer_loophole<Fn, T>::init_loophole())>
-    constexpr operator T()
+    constexpr operator T() noexcept
     {
         std::unreachable();
     }

@@ -8,18 +8,18 @@ meson.override_dependency('siga-propagate', siga_propagate_dep)
 
 if get_option('tests').enabled()
   test(
-    'deducer',
+    'test_deducer',
     executable(
-      'deducer',
+      'test_deducer',
       'test/deducer.cpp',
       dependencies: [siga_propagate_dep]
     )
   )
 
   test(
-    'optional',
+    'test_optional',
     executable(
-      'optional',
+      'test_optional',
       'test/optional.cpp',
       dependencies: [siga_propagate_dep]
     )
