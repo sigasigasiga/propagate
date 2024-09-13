@@ -1,5 +1,7 @@
 #pragma once
 
+#include <utility>
+
 #include <siga/propagate/detail/string_literal.hpp>
 
 namespace siga::propagate::detail {
