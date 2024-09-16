@@ -1,10 +1,10 @@
 #include <siga/propagate/try_traits/optional.hpp>
-#include <siga/propagate/detail/deducer.hpp>
+#include <siga/propagate/detail/ubiq.hpp>
 
 std::optional<double> single_optional()
 {
     if(false) {
-        return siga::propagate::detail::deducer<__PRETTY_FUNCTION__>{};
+        return siga::propagate::detail::ubiq<__PRETTY_FUNCTION__>{};
     }
 
     using return_type = siga::propagate::detail::function_return_type<__PRETTY_FUNCTION__>;
@@ -17,7 +17,7 @@ std::optional<double> single_optional()
 std::optional<std::optional<double>> double_optional()
 {
     if(false) {
-        return siga::propagate::detail::deducer<__PRETTY_FUNCTION__>{};
+        return siga::propagate::detail::ubiq<__PRETTY_FUNCTION__>{};
     }
 
     using return_type = siga::propagate::detail::function_return_type<__PRETTY_FUNCTION__>;
