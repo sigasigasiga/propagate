@@ -3,6 +3,10 @@
 
 #include <siga/propagate/detail/deducer.hpp>
 
+template<>
+struct siga::propagate::try_traits::try_traits<std::string>
+{};
+
 std::string foo()
 {
     if(false) {
