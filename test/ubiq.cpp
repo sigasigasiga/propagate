@@ -4,8 +4,17 @@
 #include <siga/propagate/detail/ubiq.hpp>
 
 template<>
-struct siga::propagate::try_traits::try_traits<std::string>
-{};
+class siga::propagate::try_traits::try_traits<std::string>
+{
+public:
+    using value_type = std::string;
+    using error_type = std::string;
+
+public:
+    static bool is_ok(std::string) { return true; }
+    static value_type extract_value(std::string s) { return s; }
+    static error_type extract_error(std::string s) { return s; }
+};
 
 std::string foo()
 {

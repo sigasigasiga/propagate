@@ -38,15 +38,14 @@ private:
     // 2.1. If `loophole` is found, then return `true_type`
     // 2.2. Otherwise, return `false_type`
     // 3. Pass the resulting `bool` to `loophole_write` as the last template parameter
-    //
-    // However, I don't really understand why `U` and `M` are needed
-    template<typename U, string_literal M, std::size_t = sizeof(loophole(tag<M>{}))>
+    template<string_literal M>
+    requires requires { loophole(tag<M>{}); }
     static constexpr std::true_type ins(int)
     {
         return {};
     }
 
-    template<typename U, string_literal M>
+    template<string_literal M>
     static constexpr std::false_type ins(...)
     {
         return {};
@@ -55,9 +54,8 @@ private:
 public:
     template<
         typename ReturnType,
-        std::size_t =
-            sizeof(loophole_write<ReturnType, PrettyFunction, ins<ReturnType, PrettyFunction>(0)>)>
-    constexpr operator ReturnType &() const && noexcept
+        std::size_t = sizeof(loophole_write<ReturnType, PrettyFunction, ins<PrettyFunction>(0)>)>
+    constexpr operator ReturnType() const && noexcept
     {
         std::unreachable();
     }

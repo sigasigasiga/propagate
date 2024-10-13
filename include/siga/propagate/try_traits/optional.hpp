@@ -13,23 +13,26 @@ public:
     using value_type = T;
     using error_type = std::nullopt_t;
 
-    bool is_ok(const std::optional<T> &o) { return o.has_value(); }
+public:
+    static bool is_ok(const std::optional<T> &o) { return o.has_value(); }
 
     template<typename U>
-    auto &&extract_value(U &&o)
+    static auto &&extract_value(U &&o)
     {
         return *std::forward<U>(o);
     }
 
-    error_type extract_error(auto &&) { return std::nullopt; }
+    static error_type extract_error(auto &&) { return std::nullopt; }
 
     template<typename U>
-    std::optional<T> from_value(U &&v)
+    static std::optional<T> from_value(U &&v)
     {
         return std::optional<T>(std::in_place, std::forward<U>(v));
     }
 
-    std::optional<T> from_error(std::nullopt_t) { return {}; }
+    static std::optional<T> from_error(std::nullopt_t) { return {}; }
 };
+
+static_assert(has_try_traits<std::optional<int>>);
 
 } // namespace siga::propagate::try_traits
