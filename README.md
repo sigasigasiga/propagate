@@ -40,4 +40,5 @@ int main()
 
 # Limitations
 
-Unfortunately, it currently doesn't work on `std::optional<std::optional<T>>`.
+* `std::optional<std::optional<T>>` is not supported
+* Reference types are not supported (though I don't know why would one ever use them)
