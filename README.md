@@ -1,6 +1,14 @@
 # siga.propagate
 
-A C++23 library that attempts to implement something close to `operator??` that is proposed under [P2561](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2561r2.html).
+A GNU-C++23 library that attempts to implement something close to `operator??` that is proposed under [P2561](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2561r2.html).
+
+# Requirements
+
+C++23 compiler that supports GNU's [statement exprs](https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html) extension.
+
+Tested on:
+* gcc 14.1
+* clang 18.1
 
 # How to use
 
