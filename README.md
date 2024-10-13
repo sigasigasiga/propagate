@@ -4,7 +4,10 @@ A GNU-C++23 library that attempts to implement something close to `operator??` t
 
 # Requirements
 
-C++23 compiler that supports GNU's [statement exprs](https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html) extension.
+Your C++ compiler must support:
+* C++23
+* GNU's [statement exprs](https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html) extension
+* [Type loopholes](https://alexpolt.github.io/type-loophole.html) (probably every compiler supports them though)
 
 Tested on:
 * gcc 14.1
