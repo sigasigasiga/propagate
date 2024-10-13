@@ -2,7 +2,7 @@
 
 A GNU-C++23 library that attempts to implement something close to `operator??` that is proposed under [P2561](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2561r2.html).
 
-# Requirements
+## Requirements
 
 Your C++ compiler must support:
 * C++23
@@ -13,7 +13,7 @@ Tested on:
 * gcc 14.1
 * clang 18.1
 
-# How to use
+## How to use
 
 ```cpp
 #include <siga/propagate.hpp>
@@ -41,7 +41,7 @@ int main()
 }
 ```
 
-# Limitations
+## Limitations
 
 * `std::optional<std::optional<T>>` is not supported
 * Reference types are not supported (though I don't know why one would ever use them)
