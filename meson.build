@@ -24,4 +24,13 @@ if get_option('tests').enabled()
       dependencies: [siga_propagate_dep]
     )
   )
+
+  test(
+    'test_macro',
+    executable(
+      'test_macro',
+      'test/macro.cpp',
+      dependencies: [siga_propagate_dep]
+    )
+  )
 endif

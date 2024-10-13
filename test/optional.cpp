@@ -1,7 +1,7 @@
 #include <siga/propagate/try_traits/optional.hpp>
 #include <siga/propagate/detail/ubiq.hpp>
 
-std::optional<double> single_optional()
+std::optional<double> test_ubiq_on_single_optional()
 {
     if(false) {
         return siga::propagate::detail::ubiq<__PRETTY_FUNCTION__>{};
@@ -15,7 +15,7 @@ std::optional<double> single_optional()
 
 #if 0
 // FIXME
-std::optional<std::optional<double>> double_optional()
+std::optional<std::optional<double>> test_ubiq_on_double_optional()
 {
     if(false) {
         return siga::propagate::detail::ubiq<__PRETTY_FUNCTION__>{};
