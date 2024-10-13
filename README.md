@@ -41,4 +41,4 @@ int main()
 # Limitations
 
 * `std::optional<std::optional<T>>` is not supported
-* Reference types are not supported (though I don't know why would one ever use them)
+* Reference types are not supported (though I don't know why one would ever use them)
