@@ -26,5 +26,5 @@
             );                                                                                     \
         }                                                                                          \
                                                                                                    \
-        expr_traits::extract_value(std::forward<decltype(val)>(val));                              \
+        expr_traits::extract_value(::std::forward<decltype(val)>(val));                            \
     })
