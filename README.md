@@ -1,6 +1,11 @@
 # siga.propagate
 
-A GNU-C++23 library that attempts to implement something close to `operator??` that is proposed under [P2561](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2561r2.html).
+A GNU-C++23 library that implements a macro which behaves like `operator??` that is proposed under [P2561](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2561r2.html).
+
+It supports:
+* Function return type retrieval
+* `try_traits`
+* Usage inside an expression
 
 ## Requirements
 
@@ -39,5 +44,5 @@ int main()
 
 ## Limitations
 
-* `std::optional<std::optional<T>>` is not supported
+* Functions that return `std::optional<std::optional<T>>` are not supported
 * Reference types are not supported (though I don't know why one would ever use them)
