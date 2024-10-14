@@ -45,4 +45,4 @@ int main()
 ## Limitations
 
 * Functions that return `std::optional<std::optional<T>>` are not supported
-* Reference types are not supported (though I don't know why one would ever use them)
+* Function that return references are not supported (though I don't know why one would ever use them in such scenario)
