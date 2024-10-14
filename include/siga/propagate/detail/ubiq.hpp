@@ -55,7 +55,7 @@ public:
     template<
         typename ReturnType,
         std::size_t = sizeof(loophole_write<ReturnType, PrettyFunction, ins<PrettyFunction>(0)>)>
-    constexpr operator ReturnType() const && noexcept
+    constexpr operator ReturnType() noexcept
     {
         std::unreachable();
     }
