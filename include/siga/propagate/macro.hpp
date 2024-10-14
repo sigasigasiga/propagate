@@ -20,7 +20,7 @@
                                                                                                    \
         auto &&val = EXPR;                                                                         \
         using expr_traits = ppg_tt::try_traits<::std::remove_cvref_t<decltype(val)>>;              \
-        if(not ret_traits::is_ok(val)) {                                                           \
+        if(not expr_traits::is_ok(val)) {                                                          \
             return ret_traits::from_error(                                                         \
                 expr_traits::extract_error(::std::forward<decltype(val)>(val))                     \
             );                                                                                     \
